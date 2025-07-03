@@ -1,0 +1,17 @@
+# Use an official OpenJDK image
+FROM openjdk:17
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy Java source code into the container
+COPY HelloWorld.java .
+
+# Compile the Java code
+RUN javac HelloWorld.java
+
+# Expose the port
+EXPOSE 8080
+
+# Run the application
+CMD ["java", "HelloWorld"]
